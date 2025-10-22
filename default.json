@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "helpers:pinGitHubActionDigestsToSemver",
+    ":rebaseStalePrs",
+    ":maintainLockFilesMonthly",
+    ":enablePreCommit",
+    "schedule:monthly",
+    ":label(renovate)"
+  ],
+  "packageRules": [
+    {
+      "groupName": "CI dependencies",
+      "groupSlug": "ci-dependencies",
+      "matchManagers": ["github-actions", "pre-commit"]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "addLabels": ["security"]
+  },
+  "prConcurrentLimit": 4,
+  "rollbackPrs": true,
+  "minimumReleaseAge": "7 days"
+}
