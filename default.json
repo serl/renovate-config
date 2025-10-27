@@ -19,7 +19,7 @@
   "vulnerabilityAlerts": {
     "addLabels": ["security"]
   },
-  "prConcurrentLimit": 4,
+  "prConcurrentLimit": 2,
   "rollbackPrs": true,
   "minimumReleaseAge": "7 days"
 }
