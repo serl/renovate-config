@@ -1,26 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "local>serl/renovate-config"
-  ],
-  "packageRules": [
-    {
-      "groupName": "non-major production dependencies",
-      "groupSlug": "prod-minor-patch",
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchManagers": ["pep621"],
-      "matchDepTypes": ["project.dependencies"]
-    },
-    {
-      "groupName": "dev dependencies",
-      "groupSlug": "dev-dependencies",
-      "matchManagers": ["pep621"],
-      "matchDepTypes": ["dependency-groups"]
-    },
-    {
-      "matchPackageNames": ["python"],
-      "matchUpdateTypes": ["major", "minor"],
-      "enabled": false
-    }
-  ]
+  "extends": ["local>serl/renovate-config"]
 }

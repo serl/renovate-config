@@ -11,15 +11,45 @@
   ],
   "packageRules": [
     {
-      "groupName": "CI dependencies",
-      "groupSlug": "ci-dependencies",
+      "groupName": "non-major production dependencies",
+      "groupSlug": "prod-minor-patch",
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "dev dependencies",
+      "groupSlug": "dev-dependencies",
+      "separateMajorMinor": false,
+      "matchManagers": ["pep621"],
+      "matchDepTypes": ["dependency-groups"]
+    },
+    {
+      "groupName": "dev dependencies",
+      "groupSlug": "dev-dependencies",
+      "separateMajorMinor": false,
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "groupName": "dev dependencies",
+      "groupSlug": "dev-dependencies",
+      "separateMajorMinor": false,
       "matchManagers": ["github-actions", "pre-commit"]
+    },
+    {
+      "matchPackageNames": ["postgres"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["python"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     }
   ],
   "vulnerabilityAlerts": {
     "addLabels": ["security"]
   },
-  "prConcurrentLimit": 2,
+  "prConcurrentLimit": 3,
   "rollbackPrs": true,
   "minimumReleaseAge": "7 days"
 }
