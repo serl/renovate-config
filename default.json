@@ -44,6 +44,14 @@
       "matchPackageNames": ["python"],
       "matchUpdateTypes": ["major", "minor"],
       "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "shellcheck-py/shellcheck-py",
+        "scop/pre-commit-shfmt"
+      ],
+      "description": "Renovate does not really find reliably the latest version of these dependencies, so we disable updates for them. https://github.com/renovatebot/renovate/discussions/38394",
+      "enabled": false
     }
   ],
   "vulnerabilityAlerts": {
