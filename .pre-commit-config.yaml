@@ -39,3 +39,4 @@ repos:
     rev: v2.6.3
     hooks:
       - id: biome-check
+        args: [--error-on-warnings]
